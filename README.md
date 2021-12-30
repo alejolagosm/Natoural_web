@@ -1,10 +1,7 @@
-# portfolio_website
-This is my portfolio website. 
+# Landing page in Spanish for a tour agency
 
-Always a work in progress. 
+This is a static webpage for a tour agency.
 
-It's a simple static website with an intro page, a civil engineer and tech portfolio, with about, work and contact pages.
+Still a work in progress, made using only HTML and SCSS.
 
-I made it using HTML, SCSS and a little bit of JS for some effects.
-
-Check out the demo at https://alejolagos.netlify.app/
+It's a landing page with several advanced CSS effects, animations, pop ups, menus and much more. It's built using only floats, no flex-box or CSS grid
