@@ -16,6 +16,32 @@
     <title>NATOURAL | Para personas aventureras</title>
   </head>
   <body>
+    <div class="navigation">
+      <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+      <label for="navi-toggle" class="navigation__btn">
+        <span class="navigation__icon">&nbsp;</span>
+      </label>
+      <div class="navigation__background">&nbsp;</div>
+      <nav class="navigation__nav">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"><span>01</span> Acerca de NaTOURal</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"><span>02</span> Nuestros Beneficios</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"><span>03</span> Los mejores tours</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"><span>04</span> Blog de viajes</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"><span>05</span> Reserva el tuyo</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
     <header class="header">
       <div class="header__logo-box">
         <img src="img/logo-white.png" alt="Logo" class="header__logo" />
@@ -34,7 +60,6 @@
         >
       </div>
     </header>
-
     <main>
       <section class="section-about">
         <div class="center-text mg-bottom-2">
@@ -58,19 +83,35 @@
             <a href="#" class="btn-text">Quiero saber más &rarr;</a>
           </div>
           <div class="col-1-of-2">
-            <div class="composition">
-              <img
+            <div class="composition">      
+              <!-- This was the original image component without implementing responsive download:
+                <img
                 src="img/nat-1-large.jpg"
                 alt=""
                 class="composition__photo composition__photo-p1"
-              /><img
-                src="img/nat-2-large.jpg"
-                alt=""
+              /> -->
+              <!-- To implement responsive download of images (Changing the image size depending on the size of the screen), you set the srcset attribute with different images and assign the width of that image so the browser knows without downloading it. Then you use the sizes attribute to tell the browser the approximate width of the image at each screen width.
+              With those two, the browser will select the most appropriate image to use in each case -->
+              <img
+                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                sizes="(max-width:56.25em) 20vw,(max-width:37.5em) 30vw,300px "
+                alt="Nature Photo"
+                class="composition__photo composition__photo-p1"
+                src="img/nat-1-large.jpg"
+              />
+              <img
+                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                sizes="(max-width:56.25em) 20vw,(max-width:37.5em) 30vw,300px "
+                alt="Nature Photo"
                 class="composition__photo composition__photo-p2"
-              /><img
-                src="img/nat-3-large.jpg"
-                alt=""
+                src="img/nat-2-large.jpg"
+              />
+              <img
+                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                sizes="(max-width:56.25em) 20vw,(max-width:37.5em) 30vw,300px "
+                alt="Nature Photo"
                 class="composition__photo composition__photo-p3"
+                src="img/nat-3-large.jpg"
               />
             </div>
           </div>
@@ -120,7 +161,7 @@
           </div>
         </div>
       </section>
-      <section class="section-tours">
+      <section class="section-tours" id="section-tours">
         <div class="center-text mg-bottom-2">
           <h2 class="headingsec center-text">Nuestros tours más populares</h2>
         </div>
@@ -150,7 +191,7 @@
                     <p class="card__price-only" v>Promoción</p>
                     <p class="card__price-value">$350.000</p>
                   </div>
-                  <a href="#" class="btn btn--white">Más información</a>
+                  <a href="#popup" class="btn btn--white">Más información</a>
                 </div>
               </div>
             </div>
@@ -180,7 +221,7 @@
                     <p class="card__price-only" v>Promoción</p>
                     <p class="card__price-value">$850.000</p>
                   </div>
-                  <a href="#" class="btn btn--white">Más información</a>
+                  <a href="#popup" class="btn btn--white">Más información</a>
                 </div>
               </div>
             </div>
@@ -210,7 +251,7 @@
                     <p class="card__price-only" v>Promoción</p>
                     <p class="card__price-value">$750.000</p>
                   </div>
-                  <a href="#" class="btn btn--white">Más información</a>
+                  <a href="#popup" class="btn btn--white">Más información</a>
                 </div>
               </div>
             </div>
@@ -221,6 +262,23 @@
          <a href="#" class="btn btn--green">Todos nuestros tours</a>
         </div>
       </section>
+      <div class="popup" id="popup">
+        <div class="popup__content">
+          <div class="popup__left">
+            <img src="img/nat-8.jpg" alt="Tour photo" class="popup__img">
+            <img src="img/nat-9.jpg" alt="Tour photo" class="popup__img">
+          </div>
+          <div class="popup__right">
+            <a href="#section-tours" class="popup__close">&times;</a>
+            <h2 class="headingsec .mg-bottom-1">Reservalo ya!</h2>
+            <h3 class="headingth .mg-bottom-1">Importante &ndash; Por favor lee todos los términos y condiciones</h3>
+            <p class="popup__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti temporibus fugiat corporis animi eveniet nemo laborum, reprehenderit quibusdam impedit, nesciunt, rem debitis reiciendis laudantium veniam dolore praesentium iure eius alias quam ea ipsam eaque ratione fugit earum? Sed adipisci pariatur rerum expedita beatae inventore a accusantium, ullam, voluptatibus qui nam!
+            </p>
+            <a href="#" class="btn btn--green">Reserva</a>
+          </div>
+        </div>
+      </div>
       <section class="section-stories">
         <div class="bg-video">
           <video  class="bg-video__content" autoplay muted loop>
@@ -241,8 +299,11 @@
               </figcaption>
             </figure>
             <div class="story__text">
-              <h3 class="headingth mg-bottom-1">Una semana increible con familia y amigos</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit necessitatibus velit debitis deserunt, quisquam quas assumenda commodi error excepturi repellat.
+              <h3 class="headingth mg-bottom-1">Una semana increible con familia</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit necessitatibus velit debitis deserunt, quisquam quas assumenda commodi error excepturi repellat.
+                <br>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem voluptatibus eos aut sed quod explicabo similique non a nulla ut.
               </p>
             </div>
           </div>
@@ -258,6 +319,8 @@
             <div class="story__text">
               <h3 class="headingth mg-bottom-1">Una experencia que te cambia la vida</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit necessitatibus velit debitis deserunt, quisquam quas assumenda commodi error excepturi repellat.
+                <br>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem voluptatibus eos aut sed quod explicabo similique non a nulla ut.
               </p>
             </div>
           </div>
@@ -308,7 +371,13 @@
     </main>
     <footer class="footer">
       <div class="footer__logo-box">
-        <img src="img/logo-green-2x.png" alt="Full logo" class="footer__logo">
+        <!-- The picture element can be used to make the images responsive inside the html, that is, so the browser selects different images depending on the width of the screen -->
+        <picture class="footer__logo">
+          <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" media="(max-width:37.5em)">
+          <!-- The srcset can be used to give the browser the choice to use a different image depending on the resolution of the screen --> 
+          <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full logo" class="footer__logo" src="img/logo-green-2x.png">
+        </picture>
+         
       </div>
       <div class="row">
         <div class="col-1-of-2">
@@ -343,7 +412,7 @@
         </div>
       </div>
     </footer>
-    <!-- This is for the explanation of how to do a grid using only floats -->
+    <!-- This next markup was for an explanation of how to do a grid using only floats -->
     <!-- <section class="grid-test">
       <div class="row">
         <div class="col-1-of-2">Col 1 of 2</div>
